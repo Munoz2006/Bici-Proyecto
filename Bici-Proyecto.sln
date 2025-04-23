@@ -1,11 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bici-Proyecto", "Bici-Proyecto\Bici-Proyecto.csproj", "{E4A28401-4D57-4207-9E52-FD8DEE13FE8A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{BC5A9587-DBFD-4483-B4BE-5D30A00B2C24}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ED7E78AF-23BC-4989-B81F-8E0C9B8DA32D} = {ED7E78AF-23BC-4989-B81F-8E0C9B8DA32D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{ED7E78AF-23BC-4989-B81F-8E0C9B8DA32D}"
 EndProject

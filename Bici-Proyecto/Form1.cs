@@ -6,5 +6,11 @@ namespace Bici_Proyecto
         {
             InitializeComponent();
         }
+
+        private void btnA_em_Click(object sender, EventArgs e)
+        {
+            AgregarEmpleado agregar = new AgregarEmpleado();
+            agregar.ShowDialog();
+        }
     }
 }

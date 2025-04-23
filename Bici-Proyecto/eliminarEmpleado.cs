@@ -17,7 +17,7 @@ namespace Bici_Proyecto
         {
             InitializeComponent();
         }
-
+        
         private void eliminar_E_Click(object sender, EventArgs e)
         {
             EmpleadoController empleado = new EmpleadoController();

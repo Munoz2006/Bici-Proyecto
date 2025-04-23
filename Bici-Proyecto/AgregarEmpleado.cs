@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica.controllers;
+using Modelo.Entity;
 
 namespace Bici_Proyecto
 {
@@ -40,6 +41,21 @@ namespace Bici_Proyecto
         {
             eliminarEmpleado eliminar = new eliminarEmpleado();
             eliminar.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EmpleadoController empleado = new EmpleadoController();
+            List<EmpleadoEntity> empleados = empleado.ObtenerEmpleados();
+            string resultado = "";
+            foreach (EmpleadoEntity emp in empleados)
+            {
+                resultado += "Cedula: " + emp.cedula_empleado + "\n" +
+                            "Nombre: " + emp.nombre_empleado + "\n" +
+                            "Telefono: " + emp.telefono_empleado + "\n" +
+                            "Salario: " + emp.salario_empleado + "\n\n";
+            }
+            resultadoE.Text = resultado;
         }
     }
 }

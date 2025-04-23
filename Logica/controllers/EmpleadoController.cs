@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Modelo.Entity;
 using Modelo.SqlBD;
 
 namespace Logica.controllers
@@ -55,6 +56,12 @@ namespace Logica.controllers
                 resultado = "Error al editar";
             }
             return resultado;
+        }
+        public List<EmpleadoEntity> ObtenerEmpleados()
+        {
+            EmpleadoSQL empleadoSQL = new EmpleadoSQL();
+            List<EmpleadoEntity> empleados = empleadoSQL.ObtenerEmpleados();
+            return empleados;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo.Entity
 {
-    internal class EmpleadoEntity
+    public class EmpleadoEntity
     {
         public string cedula_empleado { get; set; }
         public string nombre_empleado { get; set; }

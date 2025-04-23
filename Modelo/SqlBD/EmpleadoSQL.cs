@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Modelo.Entity;
 using MySql.Data.MySqlClient;
 
 namespace Modelo.SqlBD
 {
     public class EmpleadoSQL : Conexion
     {
+        
         public int GuardarEmpleado(string cedula, string nombre, string telefono, int salario)
         {
             int resultado = 0;
@@ -42,6 +44,25 @@ namespace Modelo.SqlBD
             resultado = cmd.ExecuteNonQuery();
 
             return resultado;
+        }
+        public List<EmpleadoEntity> ObtenerEmpleados()
+        {
+            List<EmpleadoEntity> empleados = new List<EmpleadoEntity>();
+            MySqlCommand cmd = GetConexion().CreateCommand();
+            cmd.CommandText = "SELECT * FROM empleado";
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                EmpleadoEntity empleado = new EmpleadoEntity();
+                empleado.cedula_empleado = reader.GetInt32(0).ToString();
+                empleado.nombre_empleado = reader.GetString(1);
+                empleado.telefono_empleado = reader.GetString(2).ToString();
+                empleado.salario_empleado = reader.GetInt32(3).ToString();
+                empleados.Add(empleado);
+            }
+            reader.Close();
+            return empleados;
         }
     }
 }
